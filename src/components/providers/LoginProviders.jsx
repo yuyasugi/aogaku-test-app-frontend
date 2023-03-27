@@ -23,7 +23,6 @@ export const LoginProviders = (props) => {
                 history.push('/login');
             }
             setUserId(res.data.id);
-            setType('');
             setIsLogin(true);
             }catch (e){
                 history.push('/login');

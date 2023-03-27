@@ -20,6 +20,7 @@ function Login() {
     const { setIsLogin } = useContext(LoginContext);
     const { setType } = useContext(LoginContext);
 
+
     const history = useHistory();
 
     const moveRegister = () => {
@@ -37,7 +38,9 @@ function Login() {
         setLogin({...loginInput, [e.target.name]: e.target.value});
     }
 
-    const loginSubmit = (e) => {
+    const onClickLogin = async (e) => {
+        const res = await fetch('http://localhost:8000/api/sample')
+        console.log('res', res);
         e.preventDefault();
 
         const data = {
@@ -84,7 +87,7 @@ function Login() {
                             <h4>ログイン</h4>
                         </SCardHeader>
                         <div className="card-body">
-                            <form onSubmit={loginSubmit}>
+                            <form>
                                 <div className="form-group mb-3">
                                     <label>メールアドレス</label>
                                     <Input type="email" name="email" onChange={handleInput} value={loginInput.email} className="form-control" focusBorderColor="green.700" />
@@ -97,8 +100,8 @@ function Login() {
                                     <span>{loginInput.error_list.password}</span>
                                 </div>
                                 <div className="form-group mb-3">
-                                    <Button type="submit" marginTop={3} marginRight={2} color="green.700">ログイン</Button>
-                                    <Button type="submit" marginTop={3} onClick={moveRegister} marginLeft="37%" color="green.700">新規登録へ</Button>
+                                    <Button marginTop={3} marginRight={2} color="green.700" onClick={onClickLogin}>ログイン</Button>
+                                    <Button marginTop={3} onClick={moveRegister} marginLeft="37%" color="green.700">新規登録へ</Button>
                                 </div>
                             </form>
                         </div>
