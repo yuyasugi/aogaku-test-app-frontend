@@ -49,7 +49,7 @@ function Login() {
             password: loginInput.password,
         }
 
-        axios.get('api/sanctum/csrf-cookie').then(response => {
+        axios.get('/sanctum/csrf-cookie').then(response => {
             // console.log(response);
             axios.post(`api/login`, data).then(res => {
                 console.log('resStatus',res.status);
