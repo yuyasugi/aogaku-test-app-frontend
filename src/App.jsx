@@ -20,7 +20,7 @@ import { AdminEditIssueList } from "./components/AdminEditIssueList";
 import { AdminEditProblem } from "./components/AdminEditProblem";
 import { AdminCreateIssue } from "./components/AdminCreateIssue";
 import Register from "./components/Register";
-import EasyLogin from "./components/EasyLogin";
+import UserLogin from "./components/UserLogin";
 import Login from "./components/Login";
 import axios from 'axios';
 import { LoginProviders } from "./components/providers/LoginProviders";
@@ -49,8 +49,8 @@ const App = () => {
             <Route path="/register">
                 <Register />
             </Route>
-            <Route path="/easy_login">
-                <EasyLogin />
+            <Route path="/user_login">
+                <UserLogin />
             </Route>
             <Route path="/login">
                 <Login />

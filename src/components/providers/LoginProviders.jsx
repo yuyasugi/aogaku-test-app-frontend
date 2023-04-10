@@ -39,7 +39,7 @@ export const LoginProviders = (props) => {
             setIsLogin(true);
             return;
         }catch (e){
-            history.push('/easy_login');
+            history.push('/user_login');
             return e;
         }
         })();
