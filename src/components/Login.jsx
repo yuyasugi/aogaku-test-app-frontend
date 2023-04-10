@@ -91,12 +91,12 @@ function Login() {
                             <form>
                                 <div className="form-group mb-3">
                                     <label>メールアドレス</label>
-                                    <Input type="email" name="email" onChange={handleInput} value={loginInput.email} className="form-control" focusBorderColor="green.700" />
+                                    <Input type="email" name="email" onChange={handleInput} defaultValue="y.sugimot358@gmail.com" value={loginInput.email} className="form-control" focusBorderColor="green.700" />
                                     <span>{loginInput.error_list.email}</span>
                                 </div>
                                 <div className="form-group mb-3">
                                     <label>パスワード</label>
-                                    <Input type={isRevealPassword ? 'text' : 'password'} name="password" onChange={handleInput} value={loginInput.password} className="form-control" focusBorderColor="green.700" />
+                                    <Input type={isRevealPassword ? 'text' : 'password'} name="password" onChange={handleInput} defaultValue="sugi0415" value={loginInput.password} className="form-control" focusBorderColor="green.700" />
                                     <span onClick={togglePassword} role="presentation" > {isRevealPassword ? (<FontAwesomeIcon icon={faEye} />) : (<FontAwesomeIcon icon={faEyeSlash} />)}</span>
                                     <span>{loginInput.error_list.password}</span>
                                 </div>
