@@ -39,9 +39,9 @@ function Login() {
     }
 
     const onClickLogin = async (e) => {
-        const res = await fetch(`${process.env.REACT_APP_API_URL}/api/sample`)
-        console.log('res', res);
-        console.log('url', process.env.REACT_APP_API_URL);
+        // const res = await fetch(`${process.env.REACT_APP_API_URL}/api/sample`)
+        // console.log('res', res);
+        // console.log('url', process.env.REACT_APP_API_URL);
         e.preventDefault();
 
         const data = {
@@ -50,11 +50,9 @@ function Login() {
         }
 
         axios.get('/sanctum/csrf-cookie').then(response => {
-            // console.log(response);
             axios.post(`api/login`, data).then(res => {
-                console.log('resStatus',res.data.status);
+                console.log('res',res.data.status);
                 if(res.data.status === 200){
-                    console.log('resData', res.data);
                     setType(res.data.type);
                     if(res.data.type === 'student'){
                         history.push('/');
