@@ -20,17 +20,18 @@ import { AdminEditIssueList } from "./components/AdminEditIssueList";
 import { AdminEditProblem } from "./components/AdminEditProblem";
 import { AdminCreateIssue } from "./components/AdminCreateIssue";
 import Register from "./components/Register";
+import EasyLogin from "./components/Login";
 import Login from "./components/Login";
 import axios from 'axios';
 import { LoginProviders } from "./components/providers/LoginProviders";
 
 axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 axios.defaults.withCredentials = true;
-axios.interceptors.request.use(function(config){
-    const token = localStorage.getItem('auth_token');
-    config.headers.Authorization = token ? `Bearer ${token}` : '';
-    return config;
-});
+// axios.interceptors.request.use(function(config){
+//     const token = localStorage.getItem('auth_token');
+//     config.headers.Authorization = token ? `Bearer ${token}` : '';
+//     return config;
+// });
 
 
 const App = () => {
@@ -39,6 +40,9 @@ const App = () => {
     <BrowserRouter>
         <div className="App">
         </div>
+        <Route path="/easy_login">
+                <EasyLogin />
+            </Route>
         <LoginProviders>
         <Switch>
             <Route exact path="/">
@@ -48,6 +52,7 @@ const App = () => {
             <Route path="/register">
                 <Register />
             </Route>
+            
             <Route path="/login">
                 <Login />
             </Route>
