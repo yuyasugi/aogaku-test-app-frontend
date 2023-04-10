@@ -21,6 +21,7 @@ import { AdminEditProblem } from "./components/AdminEditProblem";
 import { AdminCreateIssue } from "./components/AdminCreateIssue";
 import Register from "./components/Register";
 import UserLogin from "./components/UserLogin";
+import AdminLogin from "./components/AdminLogin";
 import Login from "./components/Login";
 import axios from 'axios';
 import { LoginProviders } from "./components/providers/LoginProviders";
@@ -51,6 +52,9 @@ const App = () => {
             </Route>
             <Route path="/user_login">
                 <UserLogin />
+            </Route>
+            <Route path="/admin_login">
+                <AdminLogin />
             </Route>
             <Route path="/login">
                 <Login />
