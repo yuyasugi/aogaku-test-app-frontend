@@ -40,6 +40,9 @@ const App = () => {
     <BrowserRouter>
         <div className="App">
         </div>
+        <Route path="/easy_login">
+                <EasyLogin />
+        </Route>
         <LoginProviders>
         <Switch>
             <Route exact path="/">
@@ -49,9 +52,7 @@ const App = () => {
             <Route path="/register">
                 <Register />
             </Route>
-            <Route path="/easy_login">
-                <EasyLogin />
-            </Route>
+            
             <Route path="/login">
                 <Login />
             </Route>
