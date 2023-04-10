@@ -14,22 +14,34 @@ export const LoginProviders = (props) => {
     const  [ type, setType ] = useState();
     console.log('isLogin',isLogin);
 
+    // useEffect(()=>{
+    //     (async ()=>{
+    //         try{
+    //             const res = await axios.get(url);
+    //         console.log('res', res);
+    //         if(!res.data.id){
+    //             history.push('/login');
+    //         }
+    //         setUserId(res.data.id);
+    //         setIsLogin(true);
+    //         }catch (e){
+    //             history.push('/login');
+    //             throw new Error(e);
+    //         }
+    //         })();
+    // },[isLogin]);
+
     useEffect(()=>{
         (async ()=>{
-            try{
-                const res = await axios.get(url);
-            console.log('res', res);
-            if(!res.data.id){
-                history.push('/login');
-            }
+        try{
+            const res = await axios.get(url);
             setUserId(res.data.id);
             setIsLogin(true);
-            }catch (e){
-                history.push('/login');
-                history.push('/easy_login');
-                throw new Error(e);
-            }
-            })();
+            return;
+        }catch (e){
+            return e;
+        }
+        })();
     },[isLogin]);
 
 
