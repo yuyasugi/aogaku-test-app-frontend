@@ -22,7 +22,7 @@ function GlobalNav () {
                 if( type === 'admin' ){
                     history.push('/admin_login');
                 } else{
-                    history.push('/');
+                    history.push('/user_login');
                 }
             }
         });
