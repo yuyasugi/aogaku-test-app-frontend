@@ -28,10 +28,6 @@ function Register() {
         error_list: [],
     });
 
-    const onClickClear = async () =>{
-        setRegister('');
-    }
-
     const handleInput = (e) => {
         e.persist();
         setRegister({...registerInput, [e.target.name]: e.target.value });
@@ -92,7 +88,7 @@ function Register() {
                                 <span>{registerInput.error_list.password}</span>
                             </div>
                             <div className="form-group mb-3">
-                                <Button type="submit" onClick={onClickClear} marginTop={3} marginRight={2} color="green.700">新規登録</Button>
+                                <Button type="submit" marginTop={3} marginRight={2} color="green.700">新規登録</Button>
                                 <Button type="submit" marginTop={3} onClick={moveLogin} marginLeft="37%" color="green.700">ログインへ</Button>
                             </div>
                         </form>
