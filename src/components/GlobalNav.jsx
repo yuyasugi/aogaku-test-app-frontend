@@ -15,7 +15,7 @@ function GlobalNav () {
 
         axios.post(`/api/logout`).then(res => {
             if (res.data.status === 200) {
-                console.log('あああ',res.data);
+                console.log('あああ',res);
                 localStorage.removeItem('auth_token', res.data.token);
                 localStorage.removeItem('auth_name', res.data.username);
                 swal("ログアウトしました", res.data.message, "success");
