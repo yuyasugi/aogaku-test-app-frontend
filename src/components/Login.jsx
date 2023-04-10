@@ -101,8 +101,8 @@ function Login() {
                                     <span>{loginInput.error_list.password}</span>
                                 </div>
                                 <div className="form-group mb-3">
-                                    <Button type="submit" marginTop={3} marginRight={2} color="green.700" onClick={onClickLogin}>ログイン</Button>
-                                    <Button type="submit" marginTop={3} onClick={moveRegister} marginLeft="37%" color="green.700">新規登録へ</Button>
+                                    <Button marginTop={3} marginRight={2} color="green.700" onClick={onClickLogin}>ログイン</Button>
+                                    <Button marginTop={3} onClick={moveRegister} marginLeft="37%" color="green.700">新規登録へ</Button>
                                 </div>
                             </form>
                         </div>
