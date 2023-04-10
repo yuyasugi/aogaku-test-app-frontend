@@ -39,9 +39,6 @@ function Login() {
     }
 
     const onClickLogin = async (e) => {
-        const res = await fetch(`${process.env.REACT_APP_API_URL}/api/sample`)
-        console.log('res', res);
-        console.log('url', process.env.REACT_APP_API_URL);
         e.preventDefault();
 
         const data = {
