@@ -20,12 +20,13 @@ export const LoginProviders = (props) => {
                 const res = await axios.get(url);
             console.log('res', res);
             if(!res.data.id){
-                history.push('/login', '/easy_login');
+                history.push('/login');
+                history.push('/easy_login');
             }
             setUserId(res.data.id);
             setIsLogin(true);
             }catch (e){
-                history.push('/login', '/easy_login');
+                history.push('/login');
                 throw new Error(e);
             }
             })();
