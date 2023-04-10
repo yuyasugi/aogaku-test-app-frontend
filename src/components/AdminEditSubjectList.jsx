@@ -50,5 +50,6 @@ import { LoginContext } from "./providers/LoginProviders";
 
     const SContainer = styled.div`
     background-color: rgba(1, 75, 21, 40%);
+    min-height: 100vh;
     width: 100%;
     `
