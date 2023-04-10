@@ -6,6 +6,7 @@ import { LoginContext } from './providers/LoginProviders';
 import styled from "styled-components";
 
 function GlobalNav () {
+    const { type } = useContext(LoginContext);
     const history = useHistory();
 
     const { isLogin, setIsLogin } = useContext(LoginContext);
@@ -15,11 +16,14 @@ function GlobalNav () {
 
         axios.post(`/api/logout`).then(res => {
             if (res.data.status === 200) {
-                console.log('あああ',res);
                 localStorage.removeItem('auth_token', res.data.token);
                 localStorage.removeItem('auth_name', res.data.username);
                 swal("ログアウトしました", res.data.message, "success");
-                history.push('/');
+                if( type === 'admin' ){
+                    history.push('/admin_login');
+                } else{
+                    history.push('/');
+                }
             }
         });
         setIsLogin(false);
