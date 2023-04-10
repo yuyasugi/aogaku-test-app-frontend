@@ -46,7 +46,7 @@ import { useHistory } from "react-router-dom";
 
 
     const SContainer = styled.div`
-    background-color: transparent;
+    background-color: rgba(1, 75, 21, 39%);
     width: 100%;
     display: flex;
     `
