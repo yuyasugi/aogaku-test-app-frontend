@@ -6,7 +6,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgba(1, 75, 21, 30%);
-  height: 100%;
 }
 
 code {
@@ -16,5 +15,4 @@ code {
 
 html {
     background-color: rgba(1, 75, 21, 40%);
-    height: 100%;
 }
