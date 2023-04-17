@@ -53,7 +53,7 @@ function Login() {
             // console.log(response);
             axios.post(`api/login`, data).then(res => {
                 console.log('resStatus',res.status);
-                if(res.status === 200){
+                if(res.data.status === 200){
                     console.log('resData', res.data);
                     setType(res.data.type);
                     if(res.data.type === 'student'){
